@@ -27,7 +27,7 @@ function App() {
 	const [active, setActive] = useState(defaultActive);
 
 	const sensors = useSensors(
-		useSensor(PointerSensor),
+		//useSensor(PointerSensor),
 		useSensor(KeyboardSensor, {
 			activationConstraint: {
 				defaultKeyboardCoordinateGetter: sortableKeyboardCoordinates,
