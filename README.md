@@ -53,6 +53,6 @@ Before you begin, ensure you have met the following requirements:
 
    ```bash
    git clone https://github.com/DArcy16/mini-kaban-app.git
-   cd mini-kaban
+   cd mini-kaban-app
 
 
