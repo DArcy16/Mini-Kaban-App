@@ -83,7 +83,7 @@ const TaskCard = ({ item, isDragOverlay = false }) => {
 					: ""
 			}
 			border-gray-300
-			 p-3 border relative rounded-md`;
+			 p-3 border relative draggable rounded-md`;
 
 	return (
 		<article ref={setNodeRef} style={style} className={articleCardStyle}>
@@ -124,7 +124,7 @@ const TaskCard = ({ item, isDragOverlay = false }) => {
 			<p className="mt-1 line-clamp-1 text-gray-600 text-xs">{item?.desc}</p>
 			<button
 				style={{ touchAction: "manipulation" }}
-				className="absolute font-bold text-gray-500 tracking-wider hover:text-gray-800 right-1 bottom-0 cursor-grab"
+				className="absolute draggable font-bold text-gray-500 tracking-wider hover:text-gray-800 right-1 bottom-0 cursor-grab"
 				{...attributes}
 				{...listeners}
 			>
