@@ -49,4 +49,8 @@
 .scroll-bar-light::-webkit-scrollbar-corner {
   background: blue;
 } 
-
+.draggable {
+  touch-action: manipulation; /* or none if needed */
+  -webkit-user-select: none;
+  user-select: none;
+}
