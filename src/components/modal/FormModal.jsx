@@ -97,6 +97,7 @@ const FormModal = ({ task = defaultTask, isOpen, setIsOpen }) => {
 						inputReadOnly
 						style={{ fontSize: "16px" }}
 						showTime
+						size="small"
 						placement="topLeft"
 						format="YYYY-MM-DD HH:mm"
 					/>

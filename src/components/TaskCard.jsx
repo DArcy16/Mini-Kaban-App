@@ -25,6 +25,7 @@ const TaskCard = ({ item, isDragOverlay = false }) => {
 	const [showDeleteModal, setShowDeleteModal] = useState(false);
 	const [showFormModal, setShowFormModal] = useState(false);
 	const [showWarning, setShowWarning] = useState(false); // show warning if curr time is close to due Date
+	const [isDue, setIsDue] = useState(false);
 
 	const dueDate = dayjs(item.dueDate);
 
@@ -58,10 +59,12 @@ const TaskCard = ({ item, isDragOverlay = false }) => {
 
 		const timeGap = 2 * 60 * 60 * 1000; // 2hr
 
-		if (timeDiff <= timeGap) {
-			setShowWarning(true);
-		} else {
+		if (timeDiff < 0) {
+			setIsDue(true);
 			setShowWarning(false);
+		} else {
+			setIsDue(false);
+			setShowWarning(timeDiff <= timeGap);
 		}
 	}, [dueDate]);
 
@@ -71,8 +74,10 @@ const TaskCard = ({ item, isDragOverlay = false }) => {
 			${
 				currContainer === "completed"
 					? "shadow-blue-400"
-					: showWarning
+					: isDue
 					? "shadow-red-400"
+					: showWarning
+					? "shadow-orange-400"
 					: currContainer === "in-progress"
 					? "shadow-green-400"
 					: ""
@@ -101,10 +106,20 @@ const TaskCard = ({ item, isDragOverlay = false }) => {
 			</div>
 			<p
 				className={`mt-1 line-clamp-1 ${
-					currContainer !== "completed" && showWarning ? "text-red-500" : ""
+					currContainer === "completed"
+						? ""
+						: isDue
+						? "text-red-500"
+						: showWarning
+						? "text-orange-500"
+						: ""
 				} text-xs font-bold`}
 			>
-				dueDate : {item.dueDate}
+				{currContainer === "completed"
+					? "Completed"
+					: isDue
+					? `Due : ${item.dueDate}`
+					: `dueDate : ${item.dueDate}`}
 			</p>
 			<p className="mt-1 line-clamp-1 text-gray-600 text-xs">{item?.desc}</p>
 			<button
