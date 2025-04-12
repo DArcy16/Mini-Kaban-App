@@ -10,6 +10,7 @@ import {
 	useSensor,
 	useSensors,
 	DragOverlay,
+	TouchSensor,
 } from "@dnd-kit/core";
 import { arrayMove, sortableKeyboardCoordinates } from "@dnd-kit/sortable";
 import { useTaskContext } from "./context/useTaskContext";
@@ -30,6 +31,12 @@ function App() {
 		useSensor(KeyboardSensor, {
 			activationConstraint: {
 				defaultKeyboardCoordinateGetter: sortableKeyboardCoordinates,
+			},
+		}),
+		useSensor(TouchSensor, {
+			activationConstraint: {
+				delay: 250,
+				tolerance: 5,
 			},
 		})
 	);
@@ -114,9 +121,9 @@ function App() {
 					style={{ height: "calc(100vh - 65px)" }}
 					className="scroll-bar-light flex md:grid md:grid-cols-3 md:max-w-[1080px] md:mx-auto gap-4 overflow-x-auto w-screen p-5 md:p-10"
 				>
-						{Object.keys(tasks).map((key) => {
-							return <SortableTaskContainer key={key} id={key} />;
-						})}
+					{Object.keys(tasks).map((key) => {
+						return <SortableTaskContainer key={key} id={key} />;
+					})}
 				</div>
 				<DragOverlay>
 					{active.id ? (

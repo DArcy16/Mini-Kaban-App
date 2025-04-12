@@ -28,7 +28,11 @@ const TaskCard = ({ item, isDragOverlay = false }) => {
 
 	const dueDate = dayjs(item.dueDate);
 
-	const style = { transform: CSS.Transform.toString(transform), transition };
+	const style = {
+		transform: CSS.Transform.toString(transform),
+		transition,
+		touchAction: "manipulation",
+	};
 
 	const currContainer = Object.keys(tasks).filter((key) =>
 		tasks[key].some((task) => task.id === item.id)
@@ -104,6 +108,7 @@ const TaskCard = ({ item, isDragOverlay = false }) => {
 			</p>
 			<p className="mt-1 line-clamp-1 text-gray-600 text-xs">{item?.desc}</p>
 			<button
+				style={{ touchAction: "manipulation" }}
 				className="absolute font-bold text-gray-500 tracking-wider hover:text-gray-800 right-1 bottom-0 cursor-grab"
 				{...attributes}
 				{...listeners}
