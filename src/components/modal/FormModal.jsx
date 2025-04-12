@@ -90,7 +90,7 @@ const FormModal = ({ task = defaultTask, isOpen, setIsOpen }) => {
 				<Form.Item
 					name="dueDate"
 					label="Due Date"
-					placement="topRight"
+					placement="topLeft"
 					rules={[{ required: true, message: "Please select date and time" }]}
 				>
 					<DatePicker
