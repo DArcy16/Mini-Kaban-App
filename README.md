@@ -1,5 +1,5 @@
 
-site - (https://mini-kaban.netlify.app/)
+site - https://mini-kaban.netlify.app/
 # Mini Kaban
 
 Mini Kaban is a simple, lightweight Kanban board application that helps you manage your tasks across three columns: **To Do**, **In Progress**, and **Completed**. With features like creating, editing, and deleting tasks, as well as intuitive drag & drop support for sorting and moving tasks between columns, Mini Kaban streamlines your workflow. It also gives you a visual warning when a task's due date is less than or equal to 2 hours away.
@@ -23,6 +23,7 @@ Mini Kaban is a simple, lightweight Kanban board application that helps you mana
 
 - **Due Date Warning:**  
   - Automatically displays a warning on task cards when a task's due date is less than or equal to **2 hours** away.
+  - Red shadow for Due Task, Orange Shadow for warning Task (**2 hours**) away
   - **Important:** The warning feature checks the due date **only once** on page load. This means that if a task's due date moves into the 2-hour window during your session, the warning will not update unless you reload the page.
   
   > **Why this approach?**  
