@@ -67,10 +67,10 @@ const TaskCard = ({ item, isDragOverlay = false }) => {
 			${
 				currContainer === "completed"
 					? "shadow-blue-400"
+					: showWarning
+					? "shadow-red-400"
 					: currContainer === "in-progress"
-					? showWarning
-						? " shadow-red-400"
-						: "shadow-green-400"
+					? "shadow-green-400"
 					: ""
 			}
 			border-gray-300

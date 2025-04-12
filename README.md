@@ -11,3 +11,44 @@ Currently, two official plugins are available:
 
 If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
 # mini-kaban-app
+
+# Mini Kaban
+
+Mini Kaban is a simple, lightweight Kanban board application that helps you manage your tasks across three columns: **To Do**, **In Progress**, and **Completed**. With features like creating, editing, and deleting tasks, as well as intuitive drag & drop support for sorting and moving tasks between columns, Mini Kaban streamlines your workflow. It also gives you a visual warning when a task's due date is less than or equal to 2 hours away.
+
+## Features
+
+- **Three Columns:**  
+  Organize your tasks into:
+  - **To Do**
+  - **In Progress**
+  - **Completed**
+
+- **Task Management:**  
+  - Create new tasks with details such as title, description, and due date.
+  - Edit existing tasks.
+  - Delete tasks that are no longer needed.
+
+- **Drag & Drop:**  
+  - Drag tasks between columns to update their status.
+  - Reorder tasks within the same column using drag & drop.
+
+- **Due Date Warning:**  
+  - Automatically displays a warning if a task's due date is less than or equal to **2 hours** away.
+
+## Getting Started
+
+### Prerequisites
+
+Before you begin, ensure you have met the following requirements:
+- [Node.js](https://nodejs.org/) installed (version 14 or higher recommended)
+- A modern web browser (Chrome, Firefox, Edge, etc.)
+
+### Installation
+
+1. **Clone the Repository:**
+
+   ```bash
+   git clone https://github.com/yourusername/mini-kaban.git
+   cd mini-kaban
+
