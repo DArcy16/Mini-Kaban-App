@@ -29,7 +29,7 @@ const TaskContainer = ({ id }) => {
 	return (
 		<div className="bg-white h-fit shrink-0 w-80 md:shrink md:w-auto rounded-lg shadow-sm">
 			<h1
-				className={`font-bold flex gap-2 text-gray-800 items-center  text-base py-3 px-6 uppercase`}
+				className={`font-bold flex gap-2 text-gray-800 items-center text-sm  md:text-base py-3 px-6 uppercase`}
 			>
 				{containerIcons[id]} {id.split("-").join(" ")}
 			</h1>
